@@ -15,7 +15,7 @@ app.get("/", (req, res) => {
 app.get("/users", (req, res) => {
   res.status(200).json(users);
 });
-app.get("/users/:test", (req, res) => {
+app.get("/users/test", (req, res) => {
     console.log(req.params);
   res.status(200).json(users);
 });
