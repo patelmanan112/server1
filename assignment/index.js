@@ -115,7 +115,7 @@ res.status(200).json({"StudentDetail" :student});
 })
 app.get("/students/branch/:branchName" , (req , res)=>{
     const studentBranch =req.params.branchName
-    const student = students.find(u=> u.branch.toLowerCase() == studentBranch.toLowerCase());
+    const student = students.filter(u=> u.branch.toLowerCase() == studentBranch.toLowerCase());
     console.log(student);
     
 res.status(200).json({"StudentDetail" :student});
