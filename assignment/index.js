@@ -80,8 +80,15 @@ app.get("/students" , (req , res)=>{
 res.status(200).json(students);
 })
 app.get("/students/topper" , (req , res)=>{
-    const topper = students.filter(u => u.cgpa>=8.5);
-res.status(200).json(topper);
+  let max = students[0].cgpa;
+  let index = 0;
+   for(let i=0; i<students.length; i++){
+    if(max<students[i].cgpa){
+      max = students[i].cgpa;
+      index =i;
+    }
+   }
+res.status(200).json(students[index]);
 })
 app.get("/students/average" , (req , res)=>{
     let sum =0;
