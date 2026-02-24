@@ -104,7 +104,7 @@ app.put("/products/:id/stock", (req, res)=>{
     const index = products.findIndex(u => u.id == productId);
     products[index] ={
            id:products[index].id,
-    name: req.body.name,
+    name: products[index].name,
     category: products[index].category,
     price: products[index].price,
     stock: req.body.stock,
