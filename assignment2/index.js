@@ -114,7 +114,6 @@ app.put("/products/:id/stock", (req, res)=>{
     if(!productId){
         res.status(400).json({"message" : "Product has missing some data"})
     }
-    products.push(products[index])
     res.status(201).json({"Updated Stock" : products[index]});
 })
 app.put("/products/:id/price", (req, res)=>{
@@ -133,7 +132,6 @@ app.put("/products/:id/price", (req, res)=>{
     if(!productId){
         res.status(400).json({"message" : "Product has missing some data"})
     }
-    products.push(products[index])
     res.status(201).json({"Updated price" : products[index]});
 })
 app.listen(3000 , ()=>{
