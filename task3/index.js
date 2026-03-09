@@ -1,6 +1,13 @@
 const express = require("express");
 
+const cors = require("cors");
 const app = express();
+app.use(cors({
+    origin:[ // to allow only particular website to acess of this server 
+        "http://localhost:5175",
+        "http://localhost:5174"
+    ]
+}));
 app.use(express.json());
 const users = [
   { id: 1, name: "Arjun", role: "student" },
